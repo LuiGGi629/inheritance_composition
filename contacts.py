@@ -1,10 +1,13 @@
-class Address:
+from representations import AsDictionaryMixin
+
+
+class Address(AsDictionaryMixin):
     def __init__(self, street, city, state, zipcode, street2="") -> None:
         self.street = street
+        self.street2 = street2
         self.city = city
         self.state = state
         self.zipcode = zipcode
-        self.street2 = street2
 
     def __str__(self) -> str:
         lines = [self.street]
